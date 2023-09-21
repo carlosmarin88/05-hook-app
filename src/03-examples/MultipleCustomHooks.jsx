@@ -1,13 +1,25 @@
 import React from 'react'
-import { useFetch } from '../hooks/useFetch'
+import { useFetch, useCounter } from '../hooks'
+import { LoadingQuote,Quote } from './'
+
+
 
 export const MultipleCustomHooks = () => {
 
-    const { data, isLoading, hasError } = useFetch('https://type.fit/api/quotes')
+    const nextQuote = (data) => {
+        if (counter >= (data.length - 1)) {
+            //console.log('aplico el reset')
+            reset()
+        }
+        return data[counter]
+    }
+
+    const { counter, increment, reset } = useCounter(1);
+    const { data, isLoading, hasError } = useFetch(`https://type.fit/api/quotes/`)
 
     //console.log(data, isLoading, hasError)
 
-    const {author, text} = !!data && data[0] // aca decimos si la data tiene valor entonces tomo 
+    const { author, text } = !!data && nextQuote(data) // aca decimos si la data tiene valor entonces tomo 
     // la posicion zero porque data hasta que tenga valor es nulo
 
     //    if(isLoading){
@@ -18,7 +30,7 @@ export const MultipleCustomHooks = () => {
         <>
             <h1>BreakingBad Quotes</h1>
             <hr />
-            {
+            {/* {
                 (isLoading)
                     ? (
                         <div className='alert alert-info text-center'>
@@ -32,9 +44,16 @@ export const MultipleCustomHooks = () => {
                             <footer className='blockquote-footer mt-4'>{author}</footer>
                         </blockquote>
                     )
+            } */}
+            {
+                (isLoading) ? <LoadingQuote /> : <Quote text={text} author={author} />
             }
 
-            <button className='btn btn-primary'>
+
+
+            <button onClick={() => increment()}
+                className='btn btn-primary'
+                disabled={isLoading}>
                 Next quote
             </button>
 
