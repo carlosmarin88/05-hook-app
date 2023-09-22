@@ -48,9 +48,6 @@ export const MultipleCustomHooks = () => {
             {
                 (isLoading) ? <LoadingQuote /> : <Quote text={text} author={author} />
             }
-
-
-
             <button onClick={() => increment()}
                 className='btn btn-primary'
                 disabled={isLoading}>
