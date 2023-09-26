@@ -39,6 +39,7 @@ export const TodoAdd = ({onNewTodo}) => {
             description: description
         }
         onNewTodo(newTodo)
+        onResetForm()        
     }
 
 
