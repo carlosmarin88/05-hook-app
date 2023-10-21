@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { HooksApp } from './hooksApp'
+import { BrowserRouter} from "react-router-dom";
 // import './08-useReuder/intro-reducer'
 // import { CounterApp } from './01-useState/CounterApp'
 // import { CounterWithCustomHoolk } from './01-useState/CounterWithCustomHoolk'
@@ -14,9 +15,16 @@ import { HooksApp } from './hooksApp'
 // import { MemoHook } from './06-memos/MemoHook'
 // import { CallbackHook } from './06-memos/CallbackHook'
 // import { Padre } from './07-tarea-memo/Padre'
-import { TodoApp } from './08-useReuder/TodoApp'
+//import { TodoApp } from './08-useReuder/TodoApp'
+import { MainApp } from './09-useContext/MainApp'
 
-ReactDOM.createRoot(document.getElementById('root')).render(<><TodoApp /></>)
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+<BrowserRouter>
+  <MainApp/>
+</BrowserRouter>
+)
+
   {/*<React.StrictMode>*/}
    {/* <HooksApp/> */}
    {/* <CounterApp/> */}
@@ -29,5 +37,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(<><TodoApp /></>)
    {/* <MemoHook/> */}
    {/* <CallbackHook /> */}
   //  <Padre />
+  {/*<TodoApp /> */}
   {/*</React.StrictMode>*/}
 
