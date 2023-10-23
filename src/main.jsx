@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { HooksApp } from './hooksApp'
-import { BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 // import './08-useReuder/intro-reducer'
 // import { CounterApp } from './01-useState/CounterApp'
 // import { CounterWithCustomHoolk } from './01-useState/CounterWithCustomHoolk'
@@ -20,23 +20,23 @@ import { MainApp } from './09-useContext/MainApp'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-<BrowserRouter>
-  <MainApp/>
-</BrowserRouter>
+  <BrowserRouter>
+    <MainApp />
+  </BrowserRouter>
 )
 
-  {/*<React.StrictMode>*/}
-   {/* <HooksApp/> */}
-   {/* <CounterApp/> */}
-   {/* <CounterWithCustomHoolk/> */}
-   {/* <SimpleForm /> */}
-   {/* <FormWithCustomHook /> */}
-   {/* <MultipleCustomHooks /> */}
-   {/* <FocusScreen/> */}
-   {/* <Layaout /> */}
-   {/* <MemoHook/> */}
-   {/* <CallbackHook /> */}
-  //  <Padre />
-  {/*<TodoApp /> */}
-  {/*</React.StrictMode>*/}
+{/*<React.StrictMode>*/ }
+{/* <HooksApp/> */ }
+{/* <CounterApp/> */ }
+{/* <CounterWithCustomHoolk/> */ }
+{/* <SimpleForm /> */ }
+{/* <FormWithCustomHook /> */ }
+{/* <MultipleCustomHooks /> */ }
+{/* <FocusScreen/> */ }
+{/* <Layaout /> */ }
+{/* <MemoHook/> */ }
+{/* <CallbackHook /> */ }
+//  <Padre />
+{/*<TodoApp /> */ }
+{/*</React.StrictMode>*/ }
 
