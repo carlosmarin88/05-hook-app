@@ -9,9 +9,9 @@ export const MultipleCustomHooks = () => {
     const nextQuote = (data) => {
         if (counter >= (data.length - 1)) {
             //console.log('aplico el reset')
-            reset()
+            if(data.length > 1)reset()
         }
-        return data[counter]
+        return data[counter - 1]
     }
 
     const { counter, increment, reset } = useCounter(1);
